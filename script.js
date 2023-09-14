@@ -32,7 +32,7 @@ const jobsData = {
   filterLanguages(lang) {
     const filterLanguages = this.jobListingData.filter((jobListing) => {
       if (jobListing.languages.includes(lang)) {
-        console.log(jobListing);
+        this.positionFiltered.push(jobListing);
         return jobListing;
       }
     });
@@ -41,13 +41,22 @@ const jobsData = {
   filterTools(tools) {
     const filterTools = this.jobListingData.filter((jobListing) => {
       if (jobListing.tools.includes(tools)) {
-        console.log(jobListing);
+        this.positionFiltered.push(jobListing);
         return jobListing;
       }
     });
     return filterTools;
   },
+  completeFiltered() {
+    const compFiltered = this.positionFiltered.filter((jobs, index) => {
+      return this.positionFiltered.indexOf(jobs) === index;
+    });
+    return compFiltered;
+  },
 };
 
-// console.log(jobsData.jobs());
+console.log(jobsData.filterLanguages("HTML"));
 console.log(jobsData.filterTools("React"));
+console.log(jobsData.filterPosition("Junior"));
+console.log(jobsData.positionFiltered);
+console.log(jobsData.completeFiltered());
