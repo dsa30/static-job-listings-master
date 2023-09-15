@@ -54,9 +54,37 @@ const jobsData = {
     return compFiltered;
   },
 };
+const container = document.querySelector(".container");
 
-console.log(jobsData.filterLanguages("HTML"));
-console.log(jobsData.filterTools("React"));
-console.log(jobsData.filterPosition("Junior"));
-console.log(jobsData.positionFiltered);
-console.log(jobsData.completeFiltered());
+jobsData.jobListingData.map((jobs) => {
+  let html = "";
+  const newPosting = jobs.new === true ? "show" : "hidden";
+  const newFeatured = jobs.featured === true ? "show" : "hidden";
+  // console.log(newPosting);
+  console.log(newPosting);
+  html = `
+  <section class="content">
+          <img src="" alt="" />
+          <div class="card-title">
+            <span class="card-title-comp">${jobs.company}</span>
+            <span class="new ${newPosting}">NEW</span>
+            <span class="featured ${newFeatured}">FEATURED</span>
+            <h1 class="title">${jobs.position}</h1>
+            <div class="timeline">
+              <h4 class="days-ago">${jobs.postedAt}</h4>
+              <h4 class="time">${jobs.contract}</h4>
+              <h4 class="location">${jobs.location}</h4>
+            </div>
+          </div>
+          <hr />
+          <div class="tech">
+            <p>Frontend</p>
+            <p>Senior</p>
+            <p>HTML</p>
+            <p>CSS</p>
+            <p>JavaScript</p>
+          </div>
+        </section>
+  `;
+  container.innerHTML += html;
+});

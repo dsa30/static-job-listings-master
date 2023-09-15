@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;700&display=swap");
+
+:root {
+  --desaturated-dark-cyan: hsl(180, 29%, 50%);
+
+  /* ### Neutral */
+
+  /* (Background) */
+  --light-grayish-cyan: hsl(180, 52%, 96%);
+  /* (Filter Tablets) */
+  --light-grayish-cyan: hsl(180, 31%, 95%);
+  --dark-grayish-cyan: hsl(180, 8%, 52%);
+  --very-dark-grayish-cyan: hsl(180, 14%, 20%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "League Spartan", sans-serif;
+  font-size: 15px;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+#header {
+  background: url(/images/bg-header-mobile.svg) center center/cover;
+  background-repeat: no-repeat;
+  padding: 4rem;
+  background-color: var(--desaturated-dark-cyan);
+}
+
+.content {
+  /* border-left: 10px solid var(--desaturated-dark-cyan); */
+  border-left: 5px solid var(--desaturated-dark-cyan);
+  padding: 1rem;
+  border-radius: 5px;
+  margin-bottom: 2rem;
+  box-shadow: 0px 11px 10px 0px rgba(0, 0, 0, 0.1);
+}
+
+.new.hidden {
+  display: none;
+}
+
+.new.show {
+  display: inline-block;
+}
+
+.featured.hidden {
+  display: none;
+}
+
+.featured.show {
+  display: inline-block;
+}
+
+.card-title-comp {
+  color: var(--desaturated-dark-cyan);
+  font-weight: 700;
+  margin-right: 1rem;
+}
+
+.new,
+.featured {
+  display: inline-block;
+  color: #fff;
+  margin-right: 0.5rem;
+}
+
+.new,
+.featured {
+  padding: 0.3rem 0.5rem;
+  border-radius: 100px;
+}
+
+.title {
+  font-size: 1.3rem;
+  margin: 0.5rem 0;
+}
+
+.new {
+  background-color: var(--desaturated-dark-cyan);
+}
+
+.featured {
+  background-color: var(--very-dark-grayish-cyan);
+}
+
+.timeline,
+.tech {
+  display: flex;
+  gap: 1rem;
+}
+
+.timeline {
+  margin-bottom: 1rem;
+  color: var(--dark-grayish-cyan);
+}
+
+.tech {
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+hr {
+  color: var(--dark-grayish-cyan);
+}
+
+.tech p {
+  background-color: var(--light-grayish-cyan);
+  color: var(--desaturated-dark-cyan);
+  font-weight: bold;
+  padding: 0.3rem;
+}
