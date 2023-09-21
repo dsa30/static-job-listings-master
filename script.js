@@ -60,8 +60,14 @@ jobsData.jobListingData.map((jobs) => {
   let html = "";
   const newPosting = jobs.new === true ? "show" : "hidden";
   const newFeatured = jobs.featured === true ? "show" : "hidden";
-  // console.log(newPosting);
-  console.log(newPosting);
+  const stack = [jobs.role, jobs.level, ...jobs.languages];
+  // let ht = "";;
+  let output = stack.map(st => {
+    return `<li>
+      ${st}
+    </li>`
+  })
+
   html = `
   <section class="content">
           <img src="" alt="" />
@@ -77,13 +83,9 @@ jobsData.jobListingData.map((jobs) => {
             </div>
           </div>
           <hr />
-          <div class="tech">
-            <p>Frontend</p>
-            <p>Senior</p>
-            <p>HTML</p>
-            <p>CSS</p>
-            <p>JavaScript</p>
-          </div>
+          <ul class="tech">
+            ${output}
+          </ul>
         </section>
   `;
   container.innerHTML += html;
