@@ -46,6 +46,12 @@ body {
   box-shadow: 0px 11px 10px 0px rgba(0, 0, 0, 0.1);
 }
 
+.content img {
+  margin-top: -4rem;
+  max-width: 50px;
+  height: auto;
+}
+
 .new.hidden {
   display: none;
 }
@@ -105,10 +111,29 @@ body {
   color: var(--dark-grayish-cyan);
 }
 
+.timeline-list {
+  margin-right: 1rem;
+}
+
+.timeline-list:first-child {
+  list-style: none;
+}
+
 .tech {
   flex-wrap: wrap;
   margin-top: 1rem;
+  list-style: none;
+  gap: 0.5rem;
 }
+
+.tech li {
+  background-color: var(--light-grayish-cyan);
+  color: var(--desaturated-dark-cyan);
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+
 
 hr {
   color: var(--dark-grayish-cyan);
