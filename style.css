@@ -42,7 +42,7 @@ body {
   border-left: 5px solid var(--desaturated-dark-cyan);
   padding: 1rem;
   border-radius: 5px;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   box-shadow: 0px 11px 10px 0px rgba(0, 0, 0, 0.1);
 }
 
@@ -131,12 +131,13 @@ body {
   color: var(--desaturated-dark-cyan);
   padding: 0.5rem;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 
 
 hr {
-  color: var(--dark-grayish-cyan);
+  color: var(--light-grayish-cyan);
 }
 
 .tech p {
@@ -148,4 +149,37 @@ hr {
 
 .tech p {
   display: none;
+}
+
+@media screen and (min-width: 840px)  {
+  #header {
+    background: url(/images/bg-header-desktop.svg) center center/cover;
+    padding: 4rem;
+    background-color: var(--desaturated-dark-cyan);
+    margin-bottom: 3rem;
+  }
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem;
+  }
+
+  .content-img-style {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  .content img {
+    margin: 0;
+    max-width: 100px;
+    height: auto;
+  }
+
+ hr {
+  display: none;
+ }
 }

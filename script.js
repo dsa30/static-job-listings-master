@@ -61,7 +61,9 @@ const li = document.querySelector(".tech");
 
 
 
-
+console.log(jobsData.filterTools("React"));
+console.log(jobsData.filterLanguages("Python"));
+console.log(jobsData.positionFiltered)
 
 jobsData.jobListingData.map((jobs) => {
   let html = "";
@@ -77,18 +79,20 @@ jobsData.jobListingData.map((jobs) => {
 
   html = `
   <section class="content">
+        <div class="content-img-style">
           <img src=${jobs.logo} alt='${jobs.company} logo' />
-          <div class="card-title">
-            <span class="card-title-comp">${jobs.company}</span>
-            <span class="new ${newPosting}">NEW</span>
-            <span class="featured ${newFeatured}">FEATURED</span>
-            <h1 class="title">${jobs.position}</h1>
-            <ul class="timeline">
-              <li class="timeline-list">${jobs.postedAt}</li>
-              <li class="timeline-list">${jobs.contract}</li>
-              <li class="timeline-list">${jobs.location}</li>
-            </ul>
-          </div>
+         <div class="card-title">
+           <span class="card-title-comp">${jobs.company}</span>
+           <span class="new ${newPosting}">NEW</span>
+           <span class="featured ${newFeatured}">FEATURED</span>
+           <h1 class="title">${jobs.position}</h1>
+           <ul class="timeline">
+             <li class="timeline-list">${jobs.postedAt}</li>
+             <li class="timeline-list">${jobs.contract}</li>
+             <li class="timeline-list">${jobs.location}</li>
+           </ul>
+         </div>
+         </div>
           <hr />
           <ul class="tech">
             ${output.join(" ")}
