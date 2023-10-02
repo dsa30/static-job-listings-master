@@ -56,14 +56,17 @@ window.addEventListener("load", () => {
     return compFiltered;
   },
 };
+
 const container = document.querySelector(".container");
-const li = document.querySelector(".tech");
 
-
-
-console.log(jobsData.filterTools("React"));
-console.log(jobsData.filterLanguages("Python"));
-console.log(jobsData.positionFiltered)
+container.addEventListener("click", (event) => {
+  console.log(event.target.getAttribute("class") === "tag-list")
+  if(event.target.getAttribute("class") === "tag-list") {
+    const selectTag = event.target.innerText;
+    jobsData.filterLanguages(selectTag)
+    console.log(jobsData.positionFiltered);
+  }
+})
 
 jobsData.jobListingData.map((jobs) => {
   let html = "";
@@ -72,7 +75,7 @@ jobsData.jobListingData.map((jobs) => {
   const stack = [jobs.role, jobs.level, ...jobs.languages];
   // let ht = "";;
   let output = stack.map(st => {
-    return `<li>
+    return `<li class="tag-list">
               ${st}
             </li>`
   })

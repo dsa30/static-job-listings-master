@@ -129,9 +129,15 @@ body {
 .tech li {
   background-color: var(--light-grayish-cyan);
   color: var(--desaturated-dark-cyan);
+  transition: all ease 0.3s;
   padding: 0.5rem;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.tech li:hover {
+  background-color: var(--desaturated-dark-cyan);
+  color: var(--light-grayish-cyan);
 }
 
 
@@ -140,7 +146,7 @@ hr {
   color: var(--light-grayish-cyan);
 }
 
-.tech p {
+/* .tech p {
   background-color: var(--light-grayish-cyan);
   color: var(--desaturated-dark-cyan);
   font-weight: bold;
@@ -149,7 +155,7 @@ hr {
 
 .tech p {
   display: none;
-}
+} */
 
 @media screen and (min-width: 840px)  {
   #header {
