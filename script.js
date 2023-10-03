@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
       jobsData.filterPosition(selectTag);
       jobsData.filterLanguages(selectTag);
       jobsData.filterTools(selectTag);
-      console.log(jobsData.completeFiltered())
+      container.innerHTML = "";
       displayList(jobsData.completeFiltered());
     }
   })
@@ -109,6 +109,43 @@ document.addEventListener("DOMContentLoaded", () => {
       container.innerHTML += html;
     });
   }
+
+  jobsData.jobListingData.map((jobs) => {
+    let html = "";
+    const newPosting = jobs.new === true ? "show" : "hidden";
+    const newFeatured = jobs.featured === true ? "show" : "hidden";
+    const stack = [jobs.role, jobs.level, ...jobs.languages];
+    // let ht = "";;
+    let output = stack.map(st => {
+      return `<li class="tag-list">
+                ${st}
+              </li>`
+    })
   
-  displayList(jobsData.jobListingData);
+    html = `
+    <section class="content">
+          <div class="content-img-style">
+            <img src=${jobs.logo} alt='${jobs.company} logo' />
+           <div class="card-title">
+             <span class="card-title-comp">${jobs.company}</span>
+             <span class="new ${newPosting}">NEW</span>
+             <span class="featured ${newFeatured}">FEATURED</span>
+             <h1 class="title">${jobs.position}</h1>
+             <ul class="timeline">
+               <li class="timeline-list">${jobs.postedAt}</li>
+               <li class="timeline-list">${jobs.contract}</li>
+               <li class="timeline-list">${jobs.location}</li>
+             </ul>
+           </div>
+           </div>
+            <hr />
+            <ul class="tech">
+              ${output.join(" ")}
+            </ul>
+          </section>
+    `;
+    container.innerHTML += html;
+  });
+  
+  // displayList(jobsData.jobListingData);
 })
