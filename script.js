@@ -60,11 +60,13 @@ window.addEventListener("load", () => {
 const container = document.querySelector(".container");
 
 container.addEventListener("click", (event) => {
-  console.log(event.target.getAttribute("class") === "tag-list")
   if(event.target.getAttribute("class") === "tag-list") {
     const selectTag = event.target.innerText;
-    jobsData.filterLanguages(selectTag)
-    console.log(jobsData.positionFiltered);
+    jobsData.filterRole(selectTag);
+    jobsData.filterPosition(selectTag);
+    jobsData.filterLanguages(selectTag);
+    jobsData.filterTools(selectTag);
+    console.log(jobsData.completeFiltered());
   }
 })
 
